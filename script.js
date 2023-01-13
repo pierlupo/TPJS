@@ -19,9 +19,9 @@ let annuaire = [
 ];
 console.table(annuaire);
 
-//console.log(afficherAnnuaire());
-//alert(afficherAnnuaire());
-//Declarations des variableslet choix, choixMenu, affichage;
+
+
+ let choix, choixMenu, affichage;
 
 const menu = `***** Bienvenue dans l'annuaire *****
                     1) Afficher contact
@@ -38,43 +38,13 @@ const menuAfficher = `Liste de mes contacts :`
 // let afficherTab = function() {
 //     //return annuaire[0].nom
 //     for(let contact of annuaire) {
-//        console.log(`Contact : ${contact.nom} ${contact.prenom}`);
+//        console.log(`Contact : ${contact.nom} ${contact.prenom}`)
 //     }
-// }
-
-// let afficherTab = function() {
-//     return annuaire.nom
 // };
 
-// let afficherTab = function() {
-//     return ` ${annuaire.nom} ${annuaire.prenom} ${annuaire.age}`;
-// }
 
-//contact is undefined :
-// let afficherTab = function(contact) {
-//     return `${contact.nom}`
-// }
 
-// for(let contact of annuaire) {
-//     console.log("###########DEBUT etudiant##########");
-//    // console.log(contact.nom);
-//    // console.log(contact.prenom);
-//    console.log(`Contact : ${contact.nom} ${contact.prenom}`);
-   //console.log(etudiant.matieres)
-    // for(let key in etudiant.matieres){
-    //    // console.log("###########DEBUT Matieres##########");
-    //      //   console.log(key);
-    //      //   console.log(etudiant.matieres[key]);
-    //      console.log(` ${key} : ${etudiant.matieres[key]} /20`);
-    //     // console.log(typeof etudiant.matieres[key]);
-    //      somme += etudiant.matieres[key];
-    //    //  console.log(somme);
-    //      nbrNote++;
-    //    //  console.log(nbrNote);
-    //      //   console.log("###########FIN Matieres##########");
-   // }
 
-//console.log(afficherTab());
 let afficherTab = function() {
     //return annuaire[0].nom
     for(let contact of annuaire) {
