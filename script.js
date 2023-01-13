@@ -40,19 +40,26 @@ const menuAfficher = `Liste de mes contacts :`
 // }
 
 // let afficherTab = function() {
+//     return annuaire.nom
+// };
+
+// let afficherTab = function() {
 //     return ` ${annuaire.nom} ${annuaire.prenom} ${annuaire.age}`;
 // }
 
-let afficherTab = function(contact) {
-    return `${contact.nom}`
-}
+//contact is undefined :
+// let afficherTab = function(contact) {
+//     return `${contact.nom}`
+// }
+
+// je n'arrive pas à afficher dans mon alert mon objet...
 
 console.log(afficherTab());
 
 switch(choix) {
     case "1":
         choixMenu = "Afficher contact"
-        alert(afficherTab(`${contact.nom}`));
+        alert(afficherTab());
         break;
     case "2":
         choixMenu = "Ajouter contact"
