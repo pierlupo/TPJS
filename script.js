@@ -32,11 +32,14 @@ const menu = `***** Bienvenue dans l'annuaire *****
                     Faites votre choix : `;
 
 choix= prompt(menu);
-
+let contact;
 const menuAfficher = `Liste de mes contacts :`
 
 // let afficherTab = function() {
-//     return annuaire.length
+//     //return annuaire[0].nom
+//     for(let contact of annuaire) {
+//        console.log(`Contact : ${contact.nom} ${contact.prenom}`);
+//     }
 // }
 
 // let afficherTab = function() {
@@ -52,10 +55,33 @@ const menuAfficher = `Liste de mes contacts :`
 //     return `${contact.nom}`
 // }
 
-// je n'arrive pas à afficher dans mon alert mon objet...
+// for(let contact of annuaire) {
+//     console.log("###########DEBUT etudiant##########");
+//    // console.log(contact.nom);
+//    // console.log(contact.prenom);
+//    console.log(`Contact : ${contact.nom} ${contact.prenom}`);
+   //console.log(etudiant.matieres)
+    // for(let key in etudiant.matieres){
+    //    // console.log("###########DEBUT Matieres##########");
+    //      //   console.log(key);
+    //      //   console.log(etudiant.matieres[key]);
+    //      console.log(` ${key} : ${etudiant.matieres[key]} /20`);
+    //     // console.log(typeof etudiant.matieres[key]);
+    //      somme += etudiant.matieres[key];
+    //    //  console.log(somme);
+    //      nbrNote++;
+    //    //  console.log(nbrNote);
+    //      //   console.log("###########FIN Matieres##########");
+   // }
 
-console.log(afficherTab());
-
+//console.log(afficherTab());
+let afficherTab = function() {
+    //return annuaire[0].nom
+    for(let contact of annuaire) {
+       console.log(`Contact : ${contact.nom} ${contact.prenom} ${contact.age}`);
+       `Contact : ${contact.prenom} ${contact.nom}  ${contact.age}`
+    }
+}
 switch(choix) {
     case "1":
         choixMenu = "Afficher contact"
