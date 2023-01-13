@@ -21,7 +21,7 @@ console.table(annuaire);
 
 
 
- let choix, choixMenu, affichage;
+ let choix, personne, choixMenu, affichage;
 
 const menu = `***** Bienvenue dans l'annuaire *****
                     1) Afficher contact
@@ -32,7 +32,9 @@ const menu = `***** Bienvenue dans l'annuaire *****
                     Faites votre choix : `;
 
 choix= prompt(menu);
+
 let contact;
+
 const menuAfficher = `Liste de mes contacts :`
 
 // let afficherTab = function() {
@@ -43,19 +45,21 @@ const menuAfficher = `Liste de mes contacts :`
 // };
 
 
-
-
 let afficherTab = function() {
     //return annuaire[0].nom
     for(let contact of annuaire) {
        console.log(`Contact : ${contact.nom} ${contact.prenom} ${contact.age}`);
-       `Contact : ${contact.prenom} ${contact.nom}  ${contact.age}`
+       return `Contact : Nom : ${contact.nom} Prénom : ${contact.prenom} Âge : ${contact.age}`
+       
     }
 }
+
+personne = `Contact : Nom : ${contact.nom} Prénom : ${contact.prenom} Âge : ${contact.age}`;
+
 switch(choix) {
     case "1":
         choixMenu = "Afficher contact"
-        alert(afficherTab());
+        alert(personne);
         break;
     case "2":
         choixMenu = "Ajouter contact"
@@ -72,10 +76,6 @@ switch(choix) {
 }
 
         
-
-
-
-
 
 if (choixMenu != "Inconnu" && choixMenu == 1){
     affichage = `Voici votre ${choixMenu}`;
