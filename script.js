@@ -1,5 +1,7 @@
-//console.log("tpVendredi13")
 "use strict";
+
+//console.log("tpVendredi13")
+
 let annuaire = [
     {
         nom: "Dupont",
@@ -17,13 +19,16 @@ let annuaire = [
         age: 17
     }
 ];
+
 console.table(annuaire);
 
-
-
-let choix, personne, choixMenu, affichage;
+let choix,
+    personne,
+    choixMenu, 
+    affichage = "choix invalide";
 
 const menu = `*** Bienvenue dans l'annuaire ***
+
                     1) Afficher contact
                     2) Ajouter contact
                     3) Supprimer contact
@@ -32,7 +37,95 @@ const menu = `*** Bienvenue dans l'annuaire ***
                     Faites votre choix : `;
 
 choix = prompt(menu);
-affichage = "choix invalide";
+/*let menuAfficher = `*** Liste de contacts *** 
+                        1) Dupont Jean 15
+                        2) Durant Pierre 16
+                        3) Martin Jean 17`;*/
+switch(choix) {
+    
+        case "1":
+            choixMenu = "Afficher contact";
+            //alert(JSON.stringify(annuaire,null,1));
+           // for(let contact of annuaire) {
+                
+              //  console.log(`Contact : ${contact.nom} ${contact.prenom} ${contact.age}`);
+                //`Contact : ${contact.nom} ${contact.prenom} ${contact.age}`;
+              //  personne += ` ${contact.nom} ${contact.prenom} ${contact.age} 
+              //  `;
+
+                //alert(JSON.stringify(contact)); 
+                //console.log(personne);
+           // }  
+            //alert(personne);
+personne = `                            *** Liste de contacts ***\n
+                        \n${annuaire[0].nom} ${annuaire[0].prenom} ${annuaire[0].age}
+`;
+             for(let i= 1; i < annuaire.length; i++){
+                    console.log(annuaire[i]);
+                    personne += `${annuaire[i].nom} ${annuaire[i].prenom} ${annuaire[i].age}
+`
+                 }
+
+            alert(personne);
+            prompt(menu);
+            break;
+
+        case "2":
+            choixMenu = "Ajouter contact"
+            annuaire.push({nom:prompt("Entrez le nom"), prenom:prompt("Entrez le prénom"), age:Number(prompt("Entrez l'âge"))}); 
+            console.table(annuaire);
+            alert(JSON.stringify(annuaire,null,1));
+            break;
+    
+        case "3":
+            choixMenu = "Supprimer contact"
+            annuaire.slice((Number(prompt("Entrez le numéro du contact à supprimer : ")))); 
+            console.table(annuaire);
+            break;
+    
+        case "4":
+    
+            choixMenu = "Quitter"
+            prompt(menu);
+            break;
+
+        default :
+
+            choixMenu ="Inconnu"
+            alert(affichage);
+            prompt(menu);
+            break;
+    }
+        
+while(choixMenu != 4) {   
+    prompt(menu);
+    if(choixMenu != "Inconnu" && choixMenu == 1){
+        
+        affichage = `Voici votre ${choixMenu}`;
+
+        }else if(choixMenu != "Inconnu" && choixMenu == 2){
+
+        affichage = `Voici votre ${choixMenu}`;
+
+        }else if(choixMenu != "Inconnu" && choixMenu == 3){
+
+        affichage = `Voici votre ${choixMenu}`;}
+
+        //else if(choixMenu != "Inconnu" && choixMenu == 4){
+
+        // affichage = `Voici votre ${choixMenu}`;
+        
+        // }
+        else{
+
+        affichage = "choix invalide";
+        //affichage = `Voici votre ${choixMenu}`;
+
+    }
+} 
+// alert(affichage);
+// console.log(affichage);
+
 // function dump(obj) {
 //         let out = '';
 //         for (var i in obj) {
@@ -57,7 +150,7 @@ affichage = "choix invalide";
 // }
 
 // afficherTab();
-//let menuAfficher = `*** Liste de contacts *** :`;
+
 // let afficherTab = function(personne){
 //         return `Contact : ${personne.nom} ${personne.prenom} ${personne.age}`
 
@@ -89,79 +182,3 @@ affichage = "choix invalide";
 // }
 
 // insertNom();
-
-
-switch(choix) {
-    
-        case "1":
-            choixMenu = "Afficher contact";
-            //console.log(personne);
-            //alert(JSON.stringify(annuaire,null,1));
-            for(let contact of annuaire) {
-                console.log(`Contact : ${contact.nom} ${contact.prenom} ${contact.age}`);
-                `Contact : ${contact.nom} ${contact.prenom} ${contact.age}`;
-                personne = `Contact : ${contact.nom} ${contact.prenom} ${contact.age}`;
-                //alert(JSON.stringify(contact)); 
-                alert(personne);   
-            }  
-            
-        break;
-
-        case "2":
-            choixMenu = "Ajouter contact"
-            annuaire.push({nom:prompt("Entrez le nom"), prenom:prompt("Entrez le prénom"), age:Number(prompt("Entrez l'âge"))}); 
-            console.table(annuaire);
-            alert(JSON.stringify(annuaire,null,1));
-            break;
-    
-        case "3":
-            choixMenu = "Supprimer contact"
-            annuaire.slice((Number(prompt("Entrez le numéro du contact à supprimer : ")))); 
-            console.table(annuaire);
-            break;
-    
-        case "4":
-    
-            choixMenu = "Quitter"
-            prompt(menu);
-            break;
-
-        default :
-
-            choixMenu ="Inconnu"
-            alert(affichage);
-            prompt(menu);
-            break;
-    }
-        
-
-       
-
-
-        
-
-if (choixMenu != "Inconnu" && choixMenu == 1){
-    
-    affichage = `Voici votre ${choixMenu}`;
-
-    }else if(choixMenu != "Inconnu" && choixMenu == 2) {
-
-       affichage = `Voici votre ${choixMenu}`;
-
-    }else if (choixMenu != "Inconnu" && choixMenu == 3){
-
-       affichage = `Voici votre ${choixMenu}`;
-
-    }else if (choixMenu != "Inconnu" && choixMenu == 4){
-
-       affichage = `Voici votre ${choixMenu}`;
-       
-    }else{
-
-        affichage = "choix invalide";
-        prompt(menu);
-        affichage = `Voici votre ${choixMenu}`;
-    }
-
-// alert(affichage);
-// console.log(affichage);
