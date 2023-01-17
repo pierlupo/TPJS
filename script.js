@@ -91,7 +91,6 @@ affichage = "choix invalide";
 // insertNom();
 
 
-
 switch(choix) {
     
         case "1":
@@ -101,21 +100,23 @@ switch(choix) {
             for(let contact of annuaire) {
                 console.log(`Contact : ${contact.nom} ${contact.prenom} ${contact.age}`);
                 `Contact : ${contact.nom} ${contact.prenom} ${contact.age}`;
-                alert(JSON.stringify(contact));    
+                personne = `Contact : ${contact.nom} ${contact.prenom} ${contact.age}`;
+                //alert(JSON.stringify(contact)); 
+                alert(personne);   
             }  
             
         break;
 
         case "2":
             choixMenu = "Ajouter contact"
-            annuaire.push({nom:prompt("Entrez le nom"), prenom:prompt("Entrez le prénom"), age:Number(prompt("Entrez l'âge")) }); 
+            annuaire.push({nom:prompt("Entrez le nom"), prenom:prompt("Entrez le prénom"), age:Number(prompt("Entrez l'âge"))}); 
             console.table(annuaire);
             alert(JSON.stringify(annuaire,null,1));
             break;
     
         case "3":
             choixMenu = "Supprimer contact"
-            annuaire.slice(Number(prompt("Entrez le numéro du contact à supprimer : "))); 
+            annuaire.slice((Number(prompt("Entrez le numéro du contact à supprimer : ")))); 
             console.table(annuaire);
             break;
     
@@ -158,6 +159,7 @@ if (choixMenu != "Inconnu" && choixMenu == 1){
     }else{
 
         affichage = "choix invalide";
+        prompt(menu);
         affichage = `Voici votre ${choixMenu}`;
     }
 
