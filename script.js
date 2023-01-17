@@ -81,9 +81,7 @@ personne = ""/* `                            *** Liste de contacts ***\n
             choixMenu = "Ajouter contact"
             annuaire.push({nom:prompt("Entrez le nom"), prenom:prompt("Entrez le prénom"), age:Number(prompt("Entrez l'âge"))}); 
             console.table(annuaire);
-
-        
-           alert(JSON.stringify(annuaire,null,1));
+            alert(JSON.stringify(annuaire,null,1));
             break;
     
         case "3":
