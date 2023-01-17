@@ -32,7 +32,7 @@ const menu = `*** Bienvenue dans l'annuaire ***
                     Faites votre choix : `;
 
 choix = prompt(menu);
-
+affichage = "choix invalide";
 // function dump(obj) {
 //         let out = '';
 //         for (var i in obj) {
@@ -41,14 +41,14 @@ choix = prompt(menu);
 //  }
 // Affiche les donnees dans une alert
 //       alert(out);
-const afficherTab = function() {
-    //return annuaire[0].nom
-    for(let contact of annuaire) {
-       console.log(`Contact : ${contact.nom} ${contact.prenom}`)
-    }
-};
+// const afficherTab = function() {
+//     //return annuaire[0].nom
+//     for(let contact of annuaire) {
+//        console.log(`Contact : ${contact.nom} ${contact.prenom}`)
+//     }
+// };
 
-personne = afficherTab;
+// personne = afficherTab;
 
 // const afficherTab = function() {
 //      console.log(`Contact : ${contact.nom} ${contact.prenom} ${contact.age}`);
@@ -57,7 +57,7 @@ personne = afficherTab;
 // }
 
 // afficherTab();
-const menuAfficher = `Liste de mes contacts :`;
+//let menuAfficher = `*** Liste de contacts *** :`;
 // let afficherTab = function(personne){
 //         return `Contact : ${personne.nom} ${personne.prenom} ${personne.age}`
 
@@ -89,10 +89,7 @@ const menuAfficher = `Liste de mes contacts :`;
 // }
 
 // insertNom();
-for(let contact of annuaire) {
-    console.log(`Contact : ${contact.nom} ${contact.prenom} ${contact.age}`);
-    `Contact : ${contact.nom} ${contact.prenom} ${contact.age}`;
-}  
+
 
 
 switch(choix) {
@@ -101,7 +98,12 @@ switch(choix) {
             choixMenu = "Afficher contact";
             //console.log(personne);
             //alert(JSON.stringify(annuaire,null,1));
-            alert(JSON.stringify(annuaire,null,1));
+            for(let contact of annuaire) {
+                console.log(`Contact : ${contact.nom} ${contact.prenom} ${contact.age}`);
+                `Contact : ${contact.nom} ${contact.prenom} ${contact.age}`;
+                alert(JSON.stringify(contact));    
+            }  
+            
         break;
 
         case "2":
@@ -113,17 +115,21 @@ switch(choix) {
     
         case "3":
             choixMenu = "Supprimer contact"
-            annuaire.slice({nom:prompt("Entrez le nom"), prenom:prompt("Entrez le prénom"), age:Number(prompt("Entrez l'âge")) }); 
+            annuaire.slice(Number(prompt("Entrez le numéro du contact à supprimer : "))); 
             console.table(annuaire);
             break;
     
         case "4":
     
             choixMenu = "Quitter"
+            prompt(menu);
             break;
 
         default :
+
             choixMenu ="Inconnu"
+            alert(affichage);
+            prompt(menu);
             break;
     }
         
@@ -148,9 +154,12 @@ if (choixMenu != "Inconnu" && choixMenu == 1){
     }else if (choixMenu != "Inconnu" && choixMenu == 4){
 
        affichage = `Voici votre ${choixMenu}`;
-}else{
+       
+    }else{
+
         affichage = "choix invalide";
-}
+        affichage = `Voici votre ${choixMenu}`;
+    }
 
 // alert(affichage);
 // console.log(affichage);
