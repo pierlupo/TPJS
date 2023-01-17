@@ -27,49 +27,56 @@ let choix,
     choixMenu, 
     affichage = "choix invalide";
 
-const menu = `*** Bienvenue dans l'annuaire ***
+const menu =  `*** Bienvenue dans l'annuaire ***
 
                     1) Afficher contact
                     2) Ajouter contact
                     3) Supprimer contact
-                    4) Quitter
+                    0) Quitter
                     
                     Faites votre choix : `;
 
+
+let suppr;
+
+// let afficherMenu = fonction () {
+
+//                     };
+
+//let elementsSupprimes = annuaire.splice(0, 2);
+console.table(annuaire);
+//
+while(choixMenu != 0) {
 choix = prompt(menu);
-/*let menuAfficher = `*** Liste de contacts *** 
-                        1) Dupont Jean 15
-                        2) Durant Pierre 16
-                        3) Martin Jean 17`;*/
 switch(choix) {
     
         case "1":
             choixMenu = "Afficher contact";
             //alert(JSON.stringify(annuaire,null,1));
-           // for(let contact of annuaire) {
+            // for(let contact of annuaire) {
                 
-              //  console.log(`Contact : ${contact.nom} ${contact.prenom} ${contact.age}`);
-                //`Contact : ${contact.nom} ${contact.prenom} ${contact.age}`;
-              //  personne += ` ${contact.nom} ${contact.prenom} ${contact.age} 
-              //  `;
+            //  console.log(`Contact : ${contact.nom} ${contact.prenom} ${contact.age}`);
+            //`Contact : ${contact.nom} ${contact.prenom} ${contact.age}`;
+            //  personne += ` ${contact.nom} ${contact.prenom} ${contact.age} 
+            //  `;
 
                 //alert(JSON.stringify(contact)); 
                 //console.log(personne);
-           // }  
+            // }  
             //alert(personne);
-personne = `                            *** Liste de contacts ***\n
+personne = ""/* `                            *** Liste de contacts ***\n
                         \n${annuaire[0].nom} ${annuaire[0].prenom} ${annuaire[0].age}
-`;
-             for(let i= 1; i < annuaire.length; i++){
+`;*/
+             for(let i= 0; i < annuaire.length; i++){
                     console.log(annuaire[i]);
-                    personne += `${annuaire[i].nom} ${annuaire[i].prenom} ${annuaire[i].age}
+                    personne += `${i} ${annuaire[i].nom} ${annuaire[i].prenom} ${annuaire[i].age}
 `
                  }
 
             alert(personne);
-            prompt(menu);
+            
             break;
-
+            
         case "2":
             choixMenu = "Ajouter contact"
             annuaire.push({nom:prompt("Entrez le nom"), prenom:prompt("Entrez le prénom"), age:Number(prompt("Entrez l'âge"))}); 
@@ -79,50 +86,48 @@ personne = `                            *** Liste de contacts ***\n
     
         case "3":
             choixMenu = "Supprimer contact"
-            annuaire.slice((Number(prompt("Entrez le numéro du contact à supprimer : ")))); 
+            suppr = (prompt("Veuillez entrer un numéro de contact à supprimer:")); 
+            annuaire.splice(suppr, 1);
             console.table(annuaire);
             break;
     
-        case "4":
-    
+        case "0":
             choixMenu = "Quitter"
-            prompt(menu);
             break;
 
         default :
-
             choixMenu ="Inconnu"
             alert(affichage);
-            prompt(menu);
             break;
     }
-        
-while(choixMenu != 4) {   
-    prompt(menu);
-    if(choixMenu != "Inconnu" && choixMenu == 1){
+
+
+
+        if(choixMenu == 1){
         
         affichage = `Voici votre ${choixMenu}`;
 
-        }else if(choixMenu != "Inconnu" && choixMenu == 2){
+        }else if(choixMenu == 2){
 
         affichage = `Voici votre ${choixMenu}`;
 
-        }else if(choixMenu != "Inconnu" && choixMenu == 3){
+        }else if(choixMenu == 3){
 
         affichage = `Voici votre ${choixMenu}`;}
 
-        //else if(choixMenu != "Inconnu" && choixMenu == 4){
+        else if(choixMenu == 0){
 
-        // affichage = `Voici votre ${choixMenu}`;
+        affichage = `Voici votre ${choixMenu}`;
         
-        // }
+        }
         else{
 
         affichage = "choix invalide";
-        //affichage = `Voici votre ${choixMenu}`;
+        
+        affichage = `Voici votre ${choixMenu}`;
 
     }
-} 
+}
 // alert(affichage);
 // console.log(affichage);
 
@@ -134,11 +139,11 @@ while(choixMenu != 4) {
 //  }
 // Affiche les donnees dans une alert
 //       alert(out);
-// const afficherTab = function() {
-//     //return annuaire[0].nom
+
+//     return annuaire[0].nom
 //     for(let contact of annuaire) {
 //        console.log(`Contact : ${contact.nom} ${contact.prenom}`)
-//     }
+
 // };
 
 // personne = afficherTab;
@@ -182,3 +187,5 @@ while(choixMenu != 4) {
 // }
 
 // insertNom();
+
+
